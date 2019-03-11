@@ -41,20 +41,21 @@ class MatricesTest {
 
 
 
-//  @DisplayName("Should calculate the correct 2d array")
-//  @ParameterizedTest(name = "{index} => input={0}, output={1}")
-//  @MethodSource("rotateInPlace")
-//  static void rotateInPlace(int[][] input, int[][] output) {
-//    assertEquals(output, Matrices.rotateInPlace(input));
-//  }
-//
-//  private static Stream<Arguments> rotateInPlace() {
-//    return Stream.of(
-//        Arguments.of(INPUT_ARR_1, EXPECTED_ARR_1),
-//        Arguments.of(INPUT_ARR_2, EXPECTED_ARR_2),
-//        Arguments.of(INPUT_ARR_3, EXPECTED_ARR_3)
-//
-//    );
-//
-//  }
+  @DisplayName("Should calculate the correct 2d array")
+  @ParameterizedTest(name = "{index} => input={0}, output={1}")
+  @MethodSource("rotateInPlace")
+  static void rotateInPlace(int[][] input, int[][] output) {
+    Matrices.rotateInPlace(input);
+    assertEquals(output, input);
+  }
+
+  private static Stream<Arguments> rotateInPlace() {
+    return Stream.of(
+        Arguments.of(INPUT_ARR_1, EXPECTED_ARR_1),
+        Arguments.of(INPUT_ARR_2, EXPECTED_ARR_2),
+        Arguments.of(INPUT_ARR_3, EXPECTED_ARR_3)
+
+    );
+
+  }
 }
